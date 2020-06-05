@@ -1,8 +1,13 @@
 import React from 'react'
-import './App.css'
+import SortPage from './pages/sort/SortPage'
 
 function App() {
-  return <div> Test </div>
+  return (
+    <div>
+      <nav>Sort Algorithms</nav>
+      <SortPage />
+    </div>
+  )
 }
 
 export default App

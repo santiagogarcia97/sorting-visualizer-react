@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-container > div {
+  background-color: #000000;
+  height: 100em;
+}
