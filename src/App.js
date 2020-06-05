@@ -1,10 +1,12 @@
 import React from 'react'
 import SortPage from './pages/sort/SortPage'
+import Topbar from './components/Topbar'
 
 function App() {
   return (
     <div>
-      <nav>Sort Algorithms</nav>
+      <Topbar />
+
       <SortPage />
     </div>
   )
