@@ -20,6 +20,6 @@ code {
 .flex-container > div {
   background-color: #ff0000;
   height: 100vh;
-  width: 2px;
+  width: 5px;
   min-width: 2px;
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ArrayItem from './ArrayItem'
 
 const SortPage = () => {
   const [array, setArray] = useState([])
@@ -6,7 +7,7 @@ const SortPage = () => {
 
   const generateArray = () => {
     const newArray = []
-    for (let i = 0; i < 100; i += 1) {
+    for (let i = 0; i < 50; i += 1) {
       newArray[i] = Math.floor(Math.random() * 1000)
     }
     setArray(newArray)
@@ -22,8 +23,8 @@ const SortPage = () => {
         <button type="button">merge</button>
       </div>
       <div className="flex-container">
-        {array.map((e, i) => (
-          <div key={i} />
+        {array.map((number, i) => (
+          <ArrayItem key={i} number={number} />
         ))}
       </div>
     </div>
