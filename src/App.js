@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import SortPage from './pages/sort/SortPage'
 import Topbar from './components/Topbar'
 
@@ -15,13 +10,9 @@ function App() {
         <Topbar />
 
         <Switch>
-          <Route path="/sort">
+          <Route path="*">
             <SortPage />
           </Route>
-          <Route path="/paths">
-            <p>asdad</p>
-          </Route>
-          <Redirect to="/sort" />
         </Switch>
       </Router>
     </div>

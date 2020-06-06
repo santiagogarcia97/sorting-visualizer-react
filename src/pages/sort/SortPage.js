@@ -38,15 +38,13 @@ const SortPage = () => {
 
   return (
     <div className="container h-90">
-      <div>
-        Sort page
+      <div className="menu">
         <button type="button" onClick={generateArray}>
-          generate array
+          Generate array
         </button>
         <button type="button" onClick={bubbleSort}>
-          bubble
+          Bubble sort
         </button>
-        <button type="button">merge</button>
       </div>
       <div className="flex-container h-90">
         {array.map((number, i) => (

@@ -1,10 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const Topbar = () => {
   return (
     <nav>
-      <Link to="/sort">Sort Algorithms</Link>
+      <div className="container">Sorting Algorithms Visualizer</div>
     </nav>
   )
 }
