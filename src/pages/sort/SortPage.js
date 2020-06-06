@@ -19,10 +19,10 @@ const SortPage = () => {
   }
 
   const bubbleSort = () => {
-    console.log('sort', array)
     const n = array.length
     const auxArr = [...array]
     let count = 1
+
     for (let i = 0; i < n; i += 1) {
       for (let j = 0; j < n; j += 1) {
         if (auxArr[j] > auxArr[j + 1]) {
@@ -37,9 +37,9 @@ const SortPage = () => {
   }
 
   return (
-    <div>
-      Sort page
+    <div className="container h-100">
       <div>
+        Sort page
         <button type="button" onClick={generateArray}>
           generate array
         </button>
@@ -48,12 +48,7 @@ const SortPage = () => {
         </button>
         <button type="button">merge</button>
       </div>
-      <div>
-        {array.map((e) => {
-          return ` ${e} `
-        })}
-      </div>
-      <div className="flex-container">
+      <div className="flex-container h-100">
         {array.map((number, i) => (
           <ArrayItem key={i} number={number} />
         ))}

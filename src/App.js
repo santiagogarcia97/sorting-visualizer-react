@@ -4,7 +4,7 @@ import Topbar from './components/Topbar'
 
 function App() {
   return (
-    <div>
+    <div className="h-100">
       <Topbar />
 
       <SortPage />

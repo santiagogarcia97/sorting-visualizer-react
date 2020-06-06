@@ -1,4 +1,6 @@
+html,
 body {
+  height: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -12,6 +14,32 @@ code {
     monospace;
 }
 
+.h-100 {
+  height: 100%;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
 .flex-container {
   display: flex;
   justify-content: space-around;
@@ -19,7 +47,6 @@ code {
 
 .flex-container > div {
   background-color: #ff0000;
-  height: 100vh;
-  width: 5px;
-  min-width: 2px;
+  flex: 1;
+  margin-right: 1px;
 }
