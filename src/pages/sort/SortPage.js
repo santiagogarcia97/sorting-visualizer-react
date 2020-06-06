@@ -37,7 +37,7 @@ const SortPage = () => {
   }
 
   return (
-    <div className="container h-100">
+    <div className="container h-90">
       <div>
         Sort page
         <button type="button" onClick={generateArray}>
@@ -48,7 +48,7 @@ const SortPage = () => {
         </button>
         <button type="button">merge</button>
       </div>
-      <div className="flex-container h-100">
+      <div className="flex-container h-90">
         {array.map((number, i) => (
           <ArrayItem key={i} number={number} />
         ))}
