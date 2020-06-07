@@ -8,8 +8,15 @@ const MainPage = () => {
     <div className="container h-90">
       <Menu array={array} setArray={setArray} />
       <div className="flex-container h-90">
-        {array.map((number, i) => (
-          <div key={i} className="bar" style={{ height: `${number / 10}%` }} />
+        {array.map((element, i) => (
+          <div
+            key={i}
+            className="bar"
+            style={{
+              height: `${element.value / 10}%`,
+              backgroundColor: element.color,
+            }}
+          />
         ))}
       </div>
     </div>

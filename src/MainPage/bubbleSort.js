@@ -1,51 +1,39 @@
-const bubleSort = (array) => {
-  // Wrapper function for animation
-  let animationCount = 1
-  const delay = (callback) => {
+import cloneDeep from 'clone-deep'
+
+const bubleSort = (array, setArray) => {
+  let iteration = 1
+  const delay = (arrayState) => {
     setTimeout(() => {
-      callback()
-    }, 10 * animationCount)
-    animationCount += 1
+      setArray(arrayState)
+    }, 10 * iteration)
+    iteration += 1
   }
 
-  // eslint-disable-next-line react/prop-types
-  const n = array.length
-  const auxArr = [...array]
-  // Array of html div elements
-  const bars = document.getElementsByClassName('bar')
+  const auxArr = array
+  const n = auxArr.length
 
   for (let i = 0; i < n; i += 1) {
     for (let j = 0; j < n - i - 1; j += 1) {
-      // Set colors of elements being compared
-      delay(() => {
-        bars[j].style.backgroundColor = 'darkcyan'
-        bars[j + 1].style.backgroundColor = 'darkblue'
-      })
+      auxArr[j].color = 'darkcyan'
+      auxArr[j + 1].color = 'darkblue'
+      delay(cloneDeep(auxArr))
 
-      if (auxArr[j] > auxArr[j + 1]) {
-        const aux = auxArr[j]
-        auxArr[j] = auxArr[j + 1]
-        auxArr[j + 1] = aux
+      if (auxArr[j].value > auxArr[j + 1].value) {
+        const aux = auxArr[j].value
+        auxArr[j].value = auxArr[j + 1].value
+        auxArr[j + 1].value = aux
 
-        // Swap divs properties
-        delay(() => {
-          const auxHeight = bars[j].style.height
-          bars[j].style.height = bars[j + 1].style.height
-          bars[j].style.backgroundColor = 'darkblue'
-          bars[j + 1].style.height = auxHeight
-          bars[j + 1].style.backgroundColor = 'darkcyan'
-        })
+        auxArr[j].color = 'darkblue'
+        auxArr[j + 1].color = 'darkcyan'
+        delay(cloneDeep(auxArr))
       }
 
-      // Set colors back to original
-      delay(() => {
-        bars[j].style.backgroundColor = 'darkred'
-        bars[j + 1].style.backgroundColor = 'darkred'
-      })
+      auxArr[j].color = 'darkred'
+      auxArr[j + 1].color = 'darkred'
+      delay(cloneDeep(auxArr))
     }
-    delay(() => {
-      bars[n - i - 1].style.backgroundColor = 'darkgreen'
-    })
+    auxArr[n - i - 1].color = 'darkgreen'
+    delay(cloneDeep(auxArr))
   }
 }
 
