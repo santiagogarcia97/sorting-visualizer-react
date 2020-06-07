@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import ArrayItem from './ArrayItem'
 import Menu from './Menu'
 
 const MainPage = () => {
@@ -10,7 +9,7 @@ const MainPage = () => {
       <Menu array={array} setArray={setArray} />
       <div className="flex-container h-90">
         {array.map((number, i) => (
-          <ArrayItem key={i} number={number} />
+          <div key={i} className="bar" style={{ height: `${number / 10}%` }} />
         ))}
       </div>
     </div>
