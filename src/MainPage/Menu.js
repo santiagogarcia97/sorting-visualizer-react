@@ -1,12 +1,16 @@
 import React from 'react'
 import bubleSort from './bubbleSort'
 
+// Gets random number from interval. From mozilla
+const getRandomArbitrary = (min, max) => {
+  return Math.floor(Math.random() * (max - min) + min)
+}
 // eslint-disable-next-line react/prop-types
 const Menu = ({ array, setArray }) => {
   const generateArray = () => {
     const newArray = []
     for (let i = 0; i < 50; i += 1) {
-      newArray[i] = Math.floor(Math.random() * 1000)
+      newArray[i] = getRandomArbitrary(10, 1000)
     }
     setArray(newArray)
   }
