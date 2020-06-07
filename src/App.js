@@ -1,13 +1,13 @@
 import React from 'react'
-import SortPage from './pages/sort/SortPage'
 import Topbar from './components/Topbar'
+import MainPage from './MainPage/MainPage'
 
 function App() {
   return (
     <div className="h-100">
       <Topbar />
 
-      <SortPage />
+      <MainPage />
     </div>
   )
 }

@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
-import ArrayItem from './ArrayItem'
+import React from 'react'
 
-const SortPage = () => {
-  const [array, setArray] = useState([])
-
+// eslint-disable-next-line react/prop-types
+const Menu = ({ array, setArray }) => {
   const generateArray = () => {
     const newArray = []
     for (let i = 0; i < 50; i += 1) {
@@ -19,6 +17,7 @@ const SortPage = () => {
   }
 
   const bubbleSort = () => {
+    // eslint-disable-next-line react/prop-types
     const n = array.length
     const auxArr = [...array]
     let count = 1
@@ -37,22 +36,15 @@ const SortPage = () => {
   }
 
   return (
-    <div className="container h-90">
-      <div className="menu">
-        <button type="button" onClick={generateArray}>
-          Generate array
-        </button>
-        <button type="button" onClick={bubbleSort}>
-          Bubble sort
-        </button>
-      </div>
-      <div className="flex-container h-90">
-        {array.map((number, i) => (
-          <ArrayItem key={i} number={number} />
-        ))}
-      </div>
+    <div className="menu">
+      <button type="button" onClick={generateArray}>
+        Generate array
+      </button>
+      <button type="button" onClick={bubbleSort}>
+        Bubble sort
+      </button>
     </div>
   )
 }
 
-export default SortPage
+export default Menu
