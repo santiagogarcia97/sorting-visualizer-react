@@ -53,7 +53,7 @@ nav {
   justify-content: space-around;
 }
 .flex-container > div {
-  background-color: #950000;
+  background-color: darkred;
   flex: 1;
   margin-right: 1px;
 }
