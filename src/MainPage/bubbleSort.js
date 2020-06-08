@@ -1,12 +1,10 @@
 import cloneDeep from 'clone-deep'
 
-const bubleSort = (array, setArray, delay) => {
-  let iteration = 1
+const bubleSort = (array, newArrayState) => {
+  let count = 1
   const newState = (arrayState) => {
-    setTimeout(() => {
-      setArray(arrayState)
-    }, delay * iteration)
-    iteration += 1
+    newArrayState(arrayState, count)
+    count += 1
   }
 
   const auxArr = array

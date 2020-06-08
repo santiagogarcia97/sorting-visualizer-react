@@ -4,9 +4,22 @@ import bubleSort from './bubbleSort'
 const Menu = ({ array, setArray, generateArray }) => {
   const [arrayLength, setArrayLength] = useState('10')
   const [delay, setDelay] = useState('100')
+  const [algorithm, setAlgorithm] = useState('merge')
+
+  const newArrayState = (arrayState, count) => {
+    setTimeout(() => {
+      setArray(arrayState)
+    }, delay * count)
+  }
 
   const handleSortClick = () => {
-    bubleSort(array, setArray, delay)
+    switch (algorithm) {
+      case 'bubble':
+        bubleSort(array, newArrayState)
+        break
+      default:
+        console.log(algorithm)
+    }
   }
 
   return (
@@ -26,7 +39,7 @@ const Menu = ({ array, setArray, generateArray }) => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="delay">Iteration delay: {delay}ms</label>
+          <label htmlFor="delay">Animation delay: {delay}ms</label>
           <input
             id="delay"
             type="range"
@@ -42,10 +55,15 @@ const Menu = ({ array, setArray, generateArray }) => {
       <div className="form-row">
         <div className="form-group">
           <label htmlFor="algorithm">Algorithm</label>
-          <select id="algorithm" name="algorithm">
+          <select
+            id="algorithm"
+            name="algorithm"
+            onBlur={(e) => setAlgorithm(e.target.value)}
+            defaultValue={algorithm}
+          >
             <option value="bubble">Bubble</option>
-            <option value="bubble">Merge</option>
-            <option value="bubble">Heap</option>
+            <option value="merge">Merge</option>
+            <option value="heap">Heap</option>
           </select>
         </div>
 
