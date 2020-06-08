@@ -2,17 +2,20 @@ import React, { useState } from 'react'
 import bubleSort from './bubbleSort'
 
 const Menu = ({ array, setArray, generateArray }) => {
-  const [arrayLength, setArrayLength] = useState('10')
-  const [delay, setDelay] = useState('100')
+  const [menuDisabled, setMenuDisabled] = useState(false)
+  const [arrayLength, setArrayLength] = useState('25')
+  const [delay, setDelay] = useState('50')
   const [algorithm, setAlgorithm] = useState('merge')
 
-  const newArrayState = (arrayState, count) => {
+  const newArrayState = (arrayState, count, sorted) => {
     setTimeout(() => {
+      if (sorted) setMenuDisabled(false)
       setArray(arrayState)
     }, delay * count)
   }
 
   const handleSortClick = () => {
+    setMenuDisabled(true)
     switch (algorithm) {
       case 'bubble':
         bubleSort(array, newArrayState)
@@ -23,7 +26,7 @@ const Menu = ({ array, setArray, generateArray }) => {
   }
 
   return (
-    <div>
+    <div className={menuDisabled ? 'disabled' : null}>
       <div className="form-row">
         <div className="form-group">
           <label htmlFor="arrayLenght">Array lenght: {arrayLength}</label>
@@ -34,6 +37,7 @@ const Menu = ({ array, setArray, generateArray }) => {
             value={arrayLength}
             min="5"
             max="100"
+            step="5"
           />
           <small>Min: 5 - Max: 100</small>
         </div>
@@ -45,10 +49,11 @@ const Menu = ({ array, setArray, generateArray }) => {
             type="range"
             onChange={(event) => setDelay(event.target.value)}
             value={delay}
-            min="1"
+            min="10"
             max="1000"
+            step="10"
           />
-          <small>Min: 1 - Max: 1000</small>
+          <small>Min: 10 - Max: 1000</small>
         </div>
       </div>
 

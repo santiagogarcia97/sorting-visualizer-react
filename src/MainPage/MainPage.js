@@ -20,7 +20,7 @@ const MainPage = () => {
     setArray(newArray)
   }
 
-  if (array.length === 0) generateArray(10)
+  if (array.length === 0) generateArray(25)
   return (
     <div className="container main">
       <Menu array={array} setArray={setArray} generateArray={generateArray} />

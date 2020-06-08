@@ -2,8 +2,8 @@ import cloneDeep from 'clone-deep'
 
 const bubleSort = (array, newArrayState) => {
   let count = 1
-  const newState = (arrayState) => {
-    newArrayState(arrayState, count)
+  const newState = (arrayState, sorted) => {
+    newArrayState(arrayState, count, sorted)
     count += 1
   }
 
@@ -33,6 +33,7 @@ const bubleSort = (array, newArrayState) => {
     auxArr[n - i - 1].color = 'darkgreen'
     newState(cloneDeep(auxArr))
   }
+  newState(auxArr, true)
 }
 
 export default bubleSort

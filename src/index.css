@@ -34,7 +34,7 @@ nav {
 }
 
 .flex-container {
-  height: 50vh;
+  height: 60vh;
   padding: 0px 5px;
   display: flex;
   justify-content: space-around;
@@ -97,7 +97,11 @@ small{
   height: 5px;
   width: 100%;
 }
-
+.disabled
+{
+  pointer-events: none;
+  opacity: 0.7;
+}
 
 .container {
   padding-right: 15px;
