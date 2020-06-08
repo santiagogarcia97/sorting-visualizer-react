@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import bubleSort from './bubbleSort'
+import bubleSort from './sortingAlgorithms/bubbleSort'
+import mergeSort from './sortingAlgorithms/mergeSort'
 
 const Menu = ({ array, setArray, generateArray }) => {
   const [menuDisabled, setMenuDisabled] = useState(false)
@@ -19,6 +20,9 @@ const Menu = ({ array, setArray, generateArray }) => {
     switch (algorithm) {
       case 'bubble':
         bubleSort(array, newArrayState)
+        break
+      case 'merge':
+        mergeSort(array, newArrayState)
         break
       default:
         console.log(algorithm)
