@@ -1,11 +1,11 @@
 import cloneDeep from 'clone-deep'
 
-const bubleSort = (array, setArray) => {
+const bubleSort = (array, setArray, delay) => {
   let iteration = 1
-  const delay = (arrayState) => {
+  const newState = (arrayState) => {
     setTimeout(() => {
       setArray(arrayState)
-    }, 10 * iteration)
+    }, delay * iteration)
     iteration += 1
   }
 
@@ -16,7 +16,7 @@ const bubleSort = (array, setArray) => {
     for (let j = 0; j < n - i - 1; j += 1) {
       auxArr[j].color = 'darkcyan'
       auxArr[j + 1].color = 'darkblue'
-      delay(cloneDeep(auxArr))
+      newState(cloneDeep(auxArr))
 
       if (auxArr[j].value > auxArr[j + 1].value) {
         const aux = auxArr[j].value
@@ -25,15 +25,15 @@ const bubleSort = (array, setArray) => {
 
         auxArr[j].color = 'darkblue'
         auxArr[j + 1].color = 'darkcyan'
-        delay(cloneDeep(auxArr))
+        newState(cloneDeep(auxArr))
       }
 
       auxArr[j].color = 'darkred'
       auxArr[j + 1].color = 'darkred'
-      delay(cloneDeep(auxArr))
+      newState(cloneDeep(auxArr))
     }
     auxArr[n - i - 1].color = 'darkgreen'
-    delay(cloneDeep(auxArr))
+    newState(cloneDeep(auxArr))
   }
 }
 

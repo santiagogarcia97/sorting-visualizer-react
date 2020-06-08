@@ -22,8 +22,13 @@ nav {
 .h-100 {
   height: 100%;
 }
-.h-90 {
-  height: 90%;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main {
+  flex-grow: 1;
 }
 
 .container {
@@ -49,8 +54,10 @@ nav {
 }
 
 .flex-container {
+  height: 60vh;
   display: flex;
   justify-content: space-around;
+  align-items: flex-end;
 }
 .flex-container > div {
   flex: 1;
@@ -58,8 +65,10 @@ nav {
 }
 
 .menu {
+  display: flex;
   padding-top: 10px;
   padding-bottom: 10px;
+  justify-content: space-between;
 }
 .menu > button {
   background-color: #156817;
@@ -68,8 +77,39 @@ nav {
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   margin-right: 2px;
   outline: none;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group {
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+input[type=number], select {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 18px;
+  width: 100%;
+  height: 34px;
+}
+label {
+  margin: 5px 2px;
+  font-size: 16px;
+  display: block;
+}
+small{
+  margin-left: 2px;
 }
