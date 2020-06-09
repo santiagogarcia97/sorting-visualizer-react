@@ -35,11 +35,9 @@ const mergeSort = (array, newArrayState) => {
         leftArray.shift()
         addState()
 
-        if (finalMerge) {
-          sortedArray[sortedArray.length - 1].color = 'darkgreen'
-        } else {
-          sortedArray[sortedArray.length - 1].color = 'darkred'
-        }
+        sortedArray[sortedArray.length - 1].color = finalMerge
+          ? 'darkgreen'
+          : 'darkred'
         rightArray[0].color = 'darkred'
         addState()
       } else {
@@ -47,17 +45,15 @@ const mergeSort = (array, newArrayState) => {
         rightArray.shift()
         addState()
 
-        if (finalMerge) {
-          sortedArray[sortedArray.length - 1].color = 'darkgreen'
-        } else {
-          sortedArray[sortedArray.length - 1].color = 'darkred'
-        }
+        sortedArray[sortedArray.length - 1].color = finalMerge
+          ? 'darkgreen'
+          : 'darkred'
         leftArray[0].color = 'darkred'
         addState()
       }
     }
+
     if (finalMerge) {
-      console.log(sortedArray)
       while (leftArray.length) {
         sortedArray.push(leftArray.shift())
         sortedArray[sortedArray.length - 1].color = 'darkgreen'
