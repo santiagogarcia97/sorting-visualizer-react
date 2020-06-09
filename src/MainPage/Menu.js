@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import bubleSort from './sortingAlgorithms/bubbleSort'
 import mergeSort from './sortingAlgorithms/mergeSort'
+import quickSort from './sortingAlgorithms/quickSort'
 
 const Menu = ({ array, setArray, generateArray }) => {
   const [menuDisabled, setMenuDisabled] = useState(false)
@@ -23,6 +24,9 @@ const Menu = ({ array, setArray, generateArray }) => {
         break
       case 'merge':
         mergeSort(array, newArrayState)
+        break
+      case 'quick':
+        quickSort(array, newArrayState)
         break
       default:
         console.log(algorithm)
@@ -72,7 +76,7 @@ const Menu = ({ array, setArray, generateArray }) => {
           >
             <option value="merge">Merge</option>
             <option value="bubble">Bubble</option>
-            <option value="heap">Heap</option>
+            <option value="quick">Quick</option>
           </select>
         </div>
 
