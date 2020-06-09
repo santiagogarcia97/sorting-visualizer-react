@@ -1,12 +1,18 @@
 import React from 'react'
 
 const ArrayElement = ({ element, render }) => {
-  const style = {
-    height: `${element.value / 10}%`,
-    backgroundColor: element.color,
-  }
+  const height = `${element.value / 10}%`
+  const backgroundColor = element.color
 
-  return <div style={style}></div>
+  if (render === 'bars') {
+    return <div style={{ height, backgroundColor }}></div>
+  } else if (render === 'dots') {
+    return (
+      <div style={{ height }}>
+        <div className="dot" style={{ backgroundColor }} />
+      </div>
+    )
+  }
 }
 
 export default ArrayElement

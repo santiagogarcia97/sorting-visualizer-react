@@ -45,6 +45,12 @@ nav {
   margin-right: 1px;
 }
 
+.dot {
+  height: 0.5vw;
+  width: 0.5vw;
+  margin: auto;
+}
+
 button {
   background-color: #156817;
   border: none;

@@ -3,7 +3,7 @@ import bubleSort from './sortingAlgorithms/bubbleSort'
 import mergeSort from './sortingAlgorithms/mergeSort'
 import quickSort from './sortingAlgorithms/quickSort'
 
-const Menu = ({ array, setArray, generateArray }) => {
+const Menu = ({ array, setArray, generateArray, setRenderType }) => {
   const [menuDisabled, setMenuDisabled] = useState(false)
   const [arrayLength, setArrayLength] = useState('25')
   const [delay, setDelay] = useState('50')
@@ -71,7 +71,7 @@ const Menu = ({ array, setArray, generateArray }) => {
           <select
             id="algorithm"
             name="algorithm"
-            onBlur={(e) => setAlgorithm(e.target.value)}
+            onChange={(e) => setAlgorithm(e.target.value)}
             defaultValue={algorithm}
           >
             <option value="merge">Merge</option>
@@ -82,9 +82,15 @@ const Menu = ({ array, setArray, generateArray }) => {
 
         <div className="form-group">
           <label htmlFor="render">Render as</label>
-          <select id="render" name="render">
-            <option value="bubble">Bars</option>
-            <option value="bubble">Dots</option>
+          <select
+            id="render"
+            name="render"
+            onChange={(e) => {
+              setRenderType(e.target.value)
+            }}
+          >
+            <option value="bars">Bars</option>
+            <option value="dots">Dots</option>
           </select>
         </div>
       </div>
