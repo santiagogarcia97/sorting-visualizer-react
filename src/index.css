@@ -85,7 +85,7 @@ select {
 }
 label {
   margin: 3px 2px;
-  font-size: 16px;
+  font-size: 14px;
   display: block;
   font-weight: bold;
 }
@@ -105,11 +105,14 @@ small{
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  width: 360px;
   margin-right: auto;
   margin-left: auto;
-  min-width: 400px;
+}
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
 }
 @media (min-width: 768px) {
   .container {
