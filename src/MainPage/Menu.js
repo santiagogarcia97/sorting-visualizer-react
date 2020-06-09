@@ -70,8 +70,8 @@ const Menu = ({ array, setArray, generateArray }) => {
             onBlur={(e) => setAlgorithm(e.target.value)}
             defaultValue={algorithm}
           >
-            <option value="bubble">Bubble</option>
             <option value="merge">Merge</option>
+            <option value="bubble">Bubble</option>
             <option value="heap">Heap</option>
           </select>
         </div>

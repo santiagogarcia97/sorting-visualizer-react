@@ -87,6 +87,7 @@ label {
   margin: 3px 2px;
   font-size: 16px;
   display: block;
+  font-weight: bold;
 }
 small{
   margin-left: 2px;
@@ -108,7 +109,7 @@ small{
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  width: 360px;
+  min-width: 400px;
 }
 @media (min-width: 768px) {
   .container {
