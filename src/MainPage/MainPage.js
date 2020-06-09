@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Menu from './Menu'
+import ArrayElement from './ArrayElement'
 
 // Gets random number from interval. From mozilla examples
 const getRandomArbitrary = (min, max) => {
@@ -26,14 +27,8 @@ const MainPage = () => {
       <Menu array={array} setArray={setArray} generateArray={generateArray} />
 
       <div className="flex-container">
-        {array.map((element, i) => (
-          <div
-            key={i}
-            style={{
-              height: `${element.value / 10}%`,
-              backgroundColor: element.color,
-            }}
-          />
+        {array.map((e, i) => (
+          <ArrayElement element={e} render={''} />
         ))}
       </div>
 
