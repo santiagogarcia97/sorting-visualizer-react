@@ -17,6 +17,11 @@ nav {
   background-color: #323232;
   padding-top: 10px;
   padding-bottom: 10px;
+
+}
+img {
+  float: right;
+  display: inline-block;
 }
 
 .h-100 {
