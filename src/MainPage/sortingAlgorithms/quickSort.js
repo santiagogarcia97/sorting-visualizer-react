@@ -101,24 +101,27 @@ const quickSort = (array, newArrayState) => {
   let auxArray = [...array]
 
   const partition = (auxArray, low, high) => {
+    newState(cloneDeep(auxArray))
     const pivot = auxArray[high]
-    let i = low - 1
+    let i = low
 
     for (let j = low; j < high; j += 1) {
       newState(cloneDeep(auxArray))
+      console.log('asd')
       if (auxArray[j].value < pivot.value) {
-        i += 1
         const temp = auxArray[i]
         auxArray[i] = auxArray[j]
         auxArray[j] = temp
+        i += 1
+        newState(cloneDeep(auxArray))
       }
     }
-    newState(cloneDeep(auxArray))
-    const temp = auxArray[i + 1]
-    auxArray[i + 1] = auxArray[high]
+    const temp = auxArray[i]
+    auxArray[i] = auxArray[high]
     auxArray[high] = temp
+    newState(cloneDeep(auxArray))
 
-    return i + 1
+    return i
   }
 
   const sort = (auxArray, low, high) => {
