@@ -39,7 +39,7 @@ img {
 }
 
 .flex-container {
-  height: 60vh;
+  height: 50vh;
   padding: 0px 5px;
   display: flex;
   justify-content: space-around;
