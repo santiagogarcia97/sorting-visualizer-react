@@ -46,7 +46,7 @@ const quickSort = (array, newArrayState) => {
     auxArray[high] = temp
     newState(cloneDeep(auxArray))
 
-    auxArray[i].color = 'darkred'
+    auxArray[i].color = 'darkgreen'
     auxArray[high].color = 'darkred'
     newState(cloneDeep(auxArray))
 
